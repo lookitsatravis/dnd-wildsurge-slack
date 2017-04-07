@@ -9,6 +9,15 @@ class CommandsController < ApplicationController
     render json: { text: result, response_type: "in_channel" }, status: :created
   end
 
+  def wildsurge_random
+    return render json: {}, status: 403 unless valid_slack_token?
+
+    random = rand(0..9999)
+    result = WildSurge.find_by_id(random)
+
+    render json: { text: "##{random}: #{result}", response_type: "in_channel" }, status: :created
+  end
+
   private
 
   def valid_slack_token?
