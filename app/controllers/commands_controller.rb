@@ -9,19 +9,10 @@ class CommandsController < ApplicationController
     render json: { text: result, response_type: "in_channel" }, status: :created
   end
 
-  def wildsurge_random
-    return render json: {}, status: 403 unless valid_slack_token?
-
-    random = rand(0..9999)
-    result = WildSurge.find_by_id(random)
-
-    render json: { text: "##{random}: #{result}", response_type: "in_channel" }, status: :created
-  end
-
   private
 
   def valid_slack_token?
-    params[:token] == ENV["SLACK_SLASH_COMMAND_TOKEN_FOR_ID"] || params[:token] == ENV["SLACK_SLASH_COMMAND_TOKEN_FOR_RANDOM"]
+    params[:token] == ENV["SLACK_SLASH_COMMAND_TOKEN"]
   end
 
   # Only allow a trusted parameter "white list" through.
