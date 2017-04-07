@@ -5,8 +5,12 @@
   "logo": "https://raw.githubusercontent.com/lookitsatravis/dnd-wildsurge-slack/master/dnd-logo.png",
   "keywords": ["rails", "dnd", "slack"],
   "env": {
-    "SLACK_SLASH_COMMAND_TOKEN": {
-      "description": "The token for the corresponding slash command provided by Slack.",
+    "SLACK_SLASH_COMMAND_TOKEN_FOR_ID": {
+      "description": "The token for the corresponding slash command provided by Slack (for getting by ID).",
+      "value": "set_me_from_slack"
+    },
+    "SLACK_SLASH_COMMAND_TOKEN_FOR_RANDOM": {
+      "description": "The token for the corresponding slash command provided by Slack (for getting a random value).",
       "value": "set_me_from_slack"
     }
   },

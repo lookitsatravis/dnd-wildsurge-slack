@@ -6,7 +6,7 @@ This app let's you add a slash command to Slack to look up wild surge spells by 
 
 ## Installation
 
-After deployment, you'll need to set the env var `SLACK_SLASH_COMMAND_TOKEN` which matches your slash command token in Slack.
+After deployment, you'll need to set the env var `SLACK_SLASH_COMMAND_TOKEN_FOR_ID` which matches your slash command token in Slack, and the `SLACK_SLASH_COMMAND_TOKEN_FOR_RANDOM` which is the same token for the random endpoint.
 
 
 ### By ID

@@ -21,7 +21,7 @@ class CommandsController < ApplicationController
   private
 
   def valid_slack_token?
-    params[:token] == ENV["SLACK_SLASH_COMMAND_TOKEN"]
+    params[:token] == ENV["SLACK_SLASH_COMMAND_TOKEN_FOR_ID"] || params[:token] == ENV["SLACK_SLASH_COMMAND_TOKEN_FOR_RANDOM"]
   end
 
   # Only allow a trusted parameter "white list" through.
